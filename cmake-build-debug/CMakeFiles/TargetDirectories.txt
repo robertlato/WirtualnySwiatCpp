@@ -1,0 +1,3 @@
+/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/CMakeFiles/wirtualny_swiat.dir

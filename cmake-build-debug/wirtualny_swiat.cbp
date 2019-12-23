@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="wirtualny_swiat"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wirtualny_swiat">
+				<Option output="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/wirtualny_swiat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 wirtualny_swiat"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wirtualny_swiat/fast">
+				<Option output="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/wirtualny_swiat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 wirtualny_swiat/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Organizm.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Organizm.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Ciern.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Ciern.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Guarana.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Guarana.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Roslina.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Roslina.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Trawa.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Roslina/Trawa.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/WirtualnySwiat.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/WirtualnySwiat.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Dzik.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Dzik.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Lew.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Lew.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Owca.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Owca.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Wilk.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Wilk.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Zmija.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Zmija.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Zwierze.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/Zwierze/Zwierze.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Organizm.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/cmake-build-debug/Organizm.h">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/main.cpp">
+			<Option target="wirtualny_swiat"/>
+		</Unit>
+		<Unit filename="/Users/robert/Desktop/Programowanie/jpo/projekt_cpp/wirtualny_swiat/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
