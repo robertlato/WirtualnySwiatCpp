@@ -11,6 +11,7 @@ Wilk::Wilk(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Wilk::~Wilk() = default;;

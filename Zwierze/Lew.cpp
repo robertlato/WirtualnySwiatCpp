@@ -11,6 +11,7 @@ Lew::Lew(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Lew::~Lew() = default;

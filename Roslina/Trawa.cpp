@@ -12,6 +12,7 @@ Trawa::Trawa(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Trawa::~Trawa() = default;

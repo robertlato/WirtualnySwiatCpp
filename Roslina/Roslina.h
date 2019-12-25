@@ -10,7 +10,13 @@
 
 class Roslina : public Organizm {
 public:
-    virtual ~Roslina();
+
+    void akcja(){}
+
+    void kolizja(int nowyX, int nowyY){}
+
+
+    virtual ~Roslina(){}
 
 
 };

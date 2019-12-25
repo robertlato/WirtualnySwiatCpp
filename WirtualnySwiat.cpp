@@ -108,7 +108,9 @@ WirtualnySwiat::WirtualnySwiat(int rozmiar, int iloscOrganizmow) {
     sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
     // wypisuje vector kolejnosci:
     cout << "wypisuje kolejnosc po segregacji\n";
-    for (const auto &i : kolejnoscOrganizmow) cout << i->getZnak() << ", inicjatywa = " << i->getInicjatywa() << endl;
+    for (const auto &j : kolejnoscOrganizmow) cout << j->getZnak() << ", inicjatywa = "
+        << j->getInicjatywa() << ", wiek = " << j->getWiek()
+        << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
 }
 
 void WirtualnySwiat::rysujSwiat() {

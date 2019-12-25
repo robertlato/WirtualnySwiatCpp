@@ -5,7 +5,7 @@
 #ifndef WIRTUALNY_SWIAT_ORGANIZM_H
 #define WIRTUALNY_SWIAT_ORGANIZM_H
 
-
+#include <string>
 // forward declaration - deklarujesz, ze bedzie istniala
 // taka klasa, zeby moc zadeklarowac wskaznik do instancji takiej klasy
 // dzieki temu unikasz sytuacji, w ktorej includujesz pliki naglowkowe
@@ -16,7 +16,7 @@ class Organizm {
 public:
     virtual void akcja() = 0;
 
-    virtual void kolizja() = 0;
+    virtual void kolizja(int nowyX, int nowyY) = 0;
 
     //void rysowanie();
 
@@ -30,6 +30,8 @@ public:
         return (wiek+inicjatywa);
     }
 
+    int getWiek(){return wiek;}
+
     char getZnak()
     {
         return this->znak;
@@ -40,21 +42,24 @@ public:
         return this->inicjatywa;
     }
 
-    virtual ~Organizm();
+    int getSila()
+    {
+        return sila;
+    }
 
-//     getPolozenie()
-//    {
-//        return polozenie;
-//    }
+
+    virtual ~Organizm()
+    {}
+
 
 protected:
     char znak;
-    int wiek;
-    int sila;
-    int inicjatywa;
+    int wiek = 0;
+    int sila = 0;
+    int inicjatywa = 0;
     struct polozenie {
-        int x;
-        int y;
+        int x = 0;
+        int y = 0;
     } polozenie;
 
     WirtualnySwiat *aktualnySwiat = nullptr;

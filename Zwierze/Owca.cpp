@@ -11,6 +11,7 @@ Owca::Owca(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Owca::~Owca() = default;

@@ -12,15 +12,15 @@
 
 #include "WirtualnySwiat.h"
 
-#include "Roslina/Ciern.h"
-#include "Roslina/Guarana.h"
-#include "Roslina/Trawa.h"
-
-#include "Zwierze/Dzik.h"
-#include "Zwierze/Lew.h"
-#include "Zwierze/Owca.h"
-#include "Zwierze/Wilk.h"
-#include "Zwierze/Zmija.h"
+//#include "Roslina/Ciern.h"
+//#include "Roslina/Guarana.h"
+//#include "Roslina/Trawa.h"
+//
+//#include "Zwierze/Dzik.h"
+//#include "Zwierze/Lew.h"
+//#include "Zwierze/Owca.h"
+//#include "Zwierze/Wilk.h"
+//#include "Zwierze/Zmija.h"
 
 
 using namespace std;
@@ -29,5 +29,8 @@ int main()
 {
     WirtualnySwiat pierwszySwiat;
     pierwszySwiat.rysujSwiat();
+    pierwszySwiat.wykonajTure();
+    pierwszySwiat.rysujSwiat();
+    cout << "Koncze program\n";
     return 0;
 }

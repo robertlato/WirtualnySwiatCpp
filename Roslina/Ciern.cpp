@@ -12,6 +12,7 @@ Ciern::Ciern(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Ciern::~Ciern() = default;

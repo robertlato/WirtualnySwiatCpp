@@ -11,6 +11,7 @@ Zmija::Zmija(int x, int y, WirtualnySwiat *swiat) {
     polozenie.x = x;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Zmija::~Zmija() = default;

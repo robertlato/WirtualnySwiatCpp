@@ -70,20 +70,11 @@ CMakeFiles/wirtualny_swiat.dir/Zwierze/Zmija.cpp.o: ../Zwierze/Zmija.h
 CMakeFiles/wirtualny_swiat.dir/Zwierze/Zmija.cpp.o: ../Zwierze/Zwierze.h
 
 CMakeFiles/wirtualny_swiat.dir/Zwierze/Zwierze.cpp.o: ../Organizm.h
+CMakeFiles/wirtualny_swiat.dir/Zwierze/Zwierze.cpp.o: ../WirtualnySwiat.h
 CMakeFiles/wirtualny_swiat.dir/Zwierze/Zwierze.cpp.o: ../Zwierze/Zwierze.cpp
 CMakeFiles/wirtualny_swiat.dir/Zwierze/Zwierze.cpp.o: ../Zwierze/Zwierze.h
 
 CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Organizm.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Roslina/Ciern.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Roslina/Guarana.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Roslina/Roslina.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Roslina/Trawa.h
 CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../WirtualnySwiat.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Dzik.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Lew.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Owca.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Wilk.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Zmija.h
-CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../Zwierze/Zwierze.h
 CMakeFiles/wirtualny_swiat.dir/main.cpp.o: ../main.cpp
 

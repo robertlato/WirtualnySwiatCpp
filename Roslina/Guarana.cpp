@@ -11,6 +11,7 @@ Guarana::Guarana(int x, int y, WirtualnySwiat *swiat) {
     inicjatywa = 0;
     polozenie.y = y;
     aktualnySwiat = swiat;
+
 }
 
 Guarana::~Guarana() = default;

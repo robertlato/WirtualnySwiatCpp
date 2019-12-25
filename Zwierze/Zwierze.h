@@ -12,7 +12,9 @@ class Zwierze : public Organizm {
 public:
     void akcja();
 
-    virtual ~Zwierze();
+    void kolizja(int nowyX, int nowyY);
+
+    virtual ~Zwierze(){}
 
 
 };
