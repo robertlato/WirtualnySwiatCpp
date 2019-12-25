@@ -9,6 +9,9 @@
 #include "../Organizm.h"
 
 class Roslina : public Organizm {
+public:
+    virtual ~Roslina();
+
 
 };
 

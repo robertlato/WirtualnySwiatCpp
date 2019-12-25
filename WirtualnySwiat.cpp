@@ -126,5 +126,21 @@ void WirtualnySwiat::rysujSwiat() {
 
 }
 
+void WirtualnySwiat::wykonajTure()
+{
+    for (const auto &i : kolejnoscOrganizmow)
+    {
+        i->akcja();
+    }
+
+}
+
+void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY)
+{
+    organizmy[x][y] = nullptr;
+    organizmy[nowyX][nowyY] = organizm;
+}
+
+
 WirtualnySwiat::~WirtualnySwiat() = default;
 

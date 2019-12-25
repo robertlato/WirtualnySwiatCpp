@@ -14,9 +14,9 @@ class WirtualnySwiat;
 
 class Organizm {
 public:
-    //void akcja();
+    virtual void akcja() = 0;
 
-    //void kolizja();
+    virtual void kolizja() = 0;
 
     //void rysowanie();
 
@@ -40,14 +40,21 @@ public:
         return this->inicjatywa;
     }
 
+    virtual ~Organizm();
+
+//     getPolozenie()
+//    {
+//        return polozenie;
+//    }
+
 protected:
-    char znak = 0;
-    int wiek = 0;
-    int sila = 0;
-    int inicjatywa = 0;
+    char znak;
+    int wiek;
+    int sila;
+    int inicjatywa;
     struct polozenie {
-        int x = 0;
-        int y = 0;
+        int x;
+        int y;
     } polozenie;
 
     WirtualnySwiat *aktualnySwiat = nullptr;

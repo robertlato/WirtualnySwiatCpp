@@ -24,9 +24,16 @@ public:
 
     ~WirtualnySwiat();
 
-    //void wykonajTure();
+    void wykonajTure();
 
     void rysujSwiat();
+
+    Organizm* getOrganizm(int x, int y)
+    {
+        return organizmy[x][y];
+    }
+
+    void setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY);
 
 };
 
