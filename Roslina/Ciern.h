@@ -16,6 +16,9 @@ public:
 
     ~Ciern();
 
+    std::string getNazwa() {
+        return ("Ciern");
+    }
 };
 
 

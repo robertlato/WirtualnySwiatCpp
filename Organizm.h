@@ -18,6 +18,8 @@ public:
 
     virtual void kolizja(int nowyX, int nowyY) = 0;
 
+    virtual std::string getNazwa() = 0;
+
     //void rysowanie();
 
     static bool porownaj(Organizm *pierwszy, Organizm *drugi)

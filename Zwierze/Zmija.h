@@ -15,6 +15,12 @@ public:
     Zmija(int x, int y, WirtualnySwiat *swiat);
 
     ~Zmija();
+
+    std::string getNazwa()
+    {
+        return ("Zmija");
+    }
+
 };
 
 

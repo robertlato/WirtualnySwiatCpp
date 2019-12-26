@@ -17,6 +17,12 @@ public:
 
     ~Trawa();
 
+    std::string getNazwa()
+    {
+        return ("Trawa");
+    }
+
+
 };
 
 

@@ -15,6 +15,12 @@ public:
     Dzik(int x, int y, WirtualnySwiat *swiat);
 
     ~Dzik();
+
+    std::string getNazwa()
+    {
+        return ("Dzik");
+    }
+
 };
 
 

@@ -15,6 +15,12 @@ public:
     Wilk(int x, int y, WirtualnySwiat *swiat);
 
     ~Wilk();
+
+    std::string getNazwa()
+    {
+        return ("Wilk");
+    }
+
 };
 
 

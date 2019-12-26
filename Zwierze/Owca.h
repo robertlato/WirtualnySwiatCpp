@@ -15,6 +15,12 @@ public:
     Owca(int x, int y, WirtualnySwiat *swiat);
 
     ~Owca();
+
+    std::string getNazwa()
+    {
+        return ("Owca");
+    }
+
 };
 
 

@@ -16,14 +16,18 @@ void Zwierze::akcja()
 
     // losuje nowyX i nowyY:
      // edytuj dla zadanego rozmiaru planszy
-    int nowyX = 21;
-    int nowyY = 21;
-    while (nowyX > 20 || nowyY > 20)
+     //  int nowyX = 21;
+    //    int nowyY = 21;
+    int rozmiarSwiata = aktualnySwiat->getRozmiar();
+    int nowyX = rozmiarSwiata;
+    int nowyY = rozmiarSwiata;
+    while (nowyX > rozmiarSwiata - 1 || nowyY > rozmiarSwiata - 1)
     {
-        nowyX = abs((rand() % 3) + (polozenie.x - 1)); // do zmiany
-        nowyY = abs((rand() % 3) + (polozenie.y - 1)); // do zmiany
+        nowyX = abs((rand() % 3) + (polozenie.x - 1));
+        nowyY = abs((rand() % 3) + (polozenie.y - 1));
     }
-    std::cout << "Aktualny x i y: " << polozenie.x << " " << polozenie.y << std::endl;
+    std::cout << "Aktualny x i y: " << polozenie.x << " " << polozenie.y
+                << ", znak: " << getZnak() << std::endl;
     std::cout << "Nowy x i y: " << nowyX << " " << nowyY << std::endl;
 
     if (aktualnySwiat->getOrganizm(nowyX, nowyY) == nullptr) // nowe pole jest wolne
@@ -38,7 +42,8 @@ void Zwierze::kolizja(int nowyX, int nowyY)
 {
     if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
-        std::cout << "Atakujacy wygrywa i zajmuje pole broniacego\n";
+        std::cout << "Atakujacy " << getNazwa() << " wygrywa i zajmuje "
+"pole broniacego " << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa() << std::endl;
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
     }
     else

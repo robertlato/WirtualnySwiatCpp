@@ -16,6 +16,9 @@ public:
 
     ~Guarana();
 
+    std::string getNazwa() {
+        return ("Guarana");
+    }
 };
 
 
