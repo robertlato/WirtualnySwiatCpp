@@ -26,9 +26,9 @@ void Zwierze::akcja()
         nowyX = abs((rand() % 3) + (polozenie.x - 1));
         nowyY = abs((rand() % 3) + (polozenie.y - 1));
     }
-    std::cout << "Aktualny x i y: " << polozenie.x << " " << polozenie.y
-                << ", znak: " << getZnak() << std::endl;
-    std::cout << "Nowy x i y: " << nowyX << " " << nowyY << std::endl;
+//    std::cout << "Aktualny x i y: " << polozenie.x << " " << polozenie.y
+//                << ", znak: " << getZnak() << std::endl;
+//    std::cout << "Nowy x i y: " << nowyX << " " << nowyY << std::endl;
 
     if (aktualnySwiat->getOrganizm(nowyX, nowyY) == nullptr) // nowe pole jest wolne
     {
@@ -39,7 +39,7 @@ void Zwierze::akcja()
         kolizja(nowyX, nowyY); // nowe pole jest zajete
 }
 
-void Zwierze::kolizja(int nowyX, int nowyY) // popraw walke i usuwanie organizmow?
+void Zwierze::kolizja(int nowyX, int nowyY)
 {
     if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
@@ -52,8 +52,11 @@ void Zwierze::kolizja(int nowyX, int nowyY) // popraw walke i usuwanie organizmo
     }
     else
     {
-        std::cout << "Atakujacy przegrywa i zwalnia pole\n";
-        //aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this); // setting nullptr
+        std:: cout << getNazwa() << " [" << polozenie.y << "]["
+                   << polozenie.x << "] atakuje "
+                   << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
+                   << " [" << nowyY << "][" << nowyX <<"], przegrywa i zwalnia swoje pole\n";
+
         aktualnySwiat->usunOrganizm(polozenie.x, polozenie.y, this);
     }
 }

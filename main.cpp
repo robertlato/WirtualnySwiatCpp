@@ -27,10 +27,39 @@ using namespace std;
 
 int main()
 {
+    // TODO: dopracuj main
+
+    cout << "Inicjuje wirtualny swiat...\n";
     WirtualnySwiat pierwszySwiat;
     pierwszySwiat.rysujSwiat();
-    pierwszySwiat.wykonajTure();
-    pierwszySwiat.rysujSwiat();
-    cout << "Koncze program\n";
+    char operacja = 0;
+    while (operacja != '2')
+    {
+        system("clear");
+        cout << "Witualny swiat\n1. Wykonaj ture\n2. Zakoncz program\n";
+        operacja = getchar();
+        switch (operacja)
+        {
+            case '1':
+                pierwszySwiat.wykonajTure();
+                pierwszySwiat.rysujSwiat();
+
+                break;
+
+            case'2':
+                break;
+
+            default:
+                cout << "Zly input, sprobuj ponownie\n";
+                break;
+        }
+    }
+//    WirtualnySwiat pierwszySwiat;
+//    pierwszySwiat.rysujSwiat();
+//    pierwszySwiat.wykonajTure();
+//    pierwszySwiat.rysujSwiat();
+//    cout << "Koncze program\n";
+
+
     return 0;
 }

@@ -53,7 +53,8 @@ WirtualnySwiat::WirtualnySwiat(int rozmiar, int iloscOrganizmow) {
         if (organizmy[x][y] == nullptr) {
             int wylosowanyOrganizm = rand() % 8 + 1;
 
-            switch (wylosowanyOrganizm) {
+            switch (wylosowanyOrganizm)
+            {
                 case 1:
                     organizmy[x][y] = new Ciern(x, y, this);
                     // dalszy kod
@@ -102,23 +103,52 @@ WirtualnySwiat::WirtualnySwiat(int rozmiar, int iloscOrganizmow) {
             }
 //            cout << "Zmniejszam i o 1\niloscOrganizmow = " << i << endl;
             i -= 1;
-            kolejnoscOrganizmow.push_back(organizmy[x][y]);
+//            kolejnoscOrganizmow.push_back(organizmy[x][y]);
         }
+    }
+    ustalKolejnosc();
+//    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+//    // wypisuje vector kolejnosci:
+//    cout << "wypisuje kolejnosc po segregacji\n";
+//    for (const auto &j : kolejnoscOrganizmow) cout << j->getZnak() << ", inicjatywa = "
+//        << j->getInicjatywa() << ", wiek = " << j->getWiek()
+//        << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
+}
 
+void WirtualnySwiat::ustalKolejnosc()
+{
+    for (int i = 0; i < rozmiar; i++)
+    {
+        for (int j = 0; j < rozmiar; j++)
+        {
+            if (organizmy[i][j] != nullptr)
+            {
+                kolejnoscOrganizmow.push_back(organizmy[i][j]);
+            }
+        }
     }
     sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+
+    // USUN BEGIN
     // wypisuje vector kolejnosci:
     cout << "wypisuje kolejnosc po segregacji\n";
     for (const auto &j : kolejnoscOrganizmow) cout << j->getZnak() << ", inicjatywa = "
-        << j->getInicjatywa() << ", wiek = " << j->getWiek()
-        << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
+                       << j->getInicjatywa() << ", wiek = " << j->getWiek()
+                       << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
+    // USUN END
 }
 
-void WirtualnySwiat::rysujSwiat() {
-    for (int i = 0; i < rozmiar; i++) {
-        for (int j = 0; j < rozmiar; j++) {
+
+void WirtualnySwiat::rysujSwiat()
+{
+    cout << endl;
+    for (int i = 0; i < rozmiar; i++)
+    {
+        for (int j = 0; j < rozmiar; j++)
+        {
             if (organizmy[i][j] == nullptr) cout << '0';
-            else {
+            else
+            {
                 cout << organizmy[i][j]->getZnak();
             }
 
@@ -126,16 +156,19 @@ void WirtualnySwiat::rysujSwiat() {
         }
         cout << endl;
     }
-
+    cout << endl;
 }
 
 void WirtualnySwiat::wykonajTure()
 {
+    tura += 1;
     for (const auto &i : kolejnoscOrganizmow)
     {
         i->akcja();
     }
+    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
 
+//    ustalKolejnosc();
 }
 
 void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY)
@@ -156,3 +189,17 @@ void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, in
 
 WirtualnySwiat::~WirtualnySwiat() = default;
 
+
+
+void WirtualnySwiat::usunOrganizm(int x, int y, Organizm* organizm)
+{
+    organizmy[x][y] = nullptr;
+
+    // usun wskaznik z vectora kolejnoscOrganizmow
+
+    vector<Organizm*>::iterator it;
+    it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizm);
+    kolejnoscOrganizmow.erase(it);
+
+    delete organizm;
+}

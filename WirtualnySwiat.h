@@ -15,10 +15,10 @@ class WirtualnySwiat {
     Organizm*** organizmy;
     int iloscOrganizmow;
     std::vector <Organizm*> kolejnoscOrganizmow;
-    int tura = 0;
     int rozmiar;
 
 public:
+    int tura = 0;
 
     WirtualnySwiat(int rozmiar = 20, int iloscOrganizmow = 20);
 
@@ -39,16 +39,10 @@ public:
     }
 
     void setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY);
-//    void setOrganizm(int x, int y, Organizm* organizm)
-//    {
-//        organizmy[x][y] = nullptr;
-//    }
 
-    void usunOrganizm(int x, int y, Organizm* organizm)
-    {
-        organizmy[x][y] = nullptr;
-        delete organizm;
-    }
+    void usunOrganizm(int x, int y, Organizm* organizm);
+
+    void ustalKolejnosc();
 
 };
 
