@@ -39,13 +39,14 @@ public:
     }
 
     void setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY);
-    void setOrganizm(int x, int y, Organizm* organizm)
+//    void setOrganizm(int x, int y, Organizm* organizm)
+//    {
+//        organizmy[x][y] = nullptr;
+//    }
+
+    void usunOrganizm(int x, int y, Organizm* organizm)
     {
         organizmy[x][y] = nullptr;
-    }
-
-    static void usunOrganizm(Organizm* organizm)
-    {
         delete organizm;
     }
 

@@ -34,22 +34,26 @@ void Zwierze::akcja()
     {
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
     }
+    else if (nowyX == polozenie.x && nowyY == polozenie.y){} // organizm nie ruszyl sie w tej turze
     else
         kolizja(nowyX, nowyY); // nowe pole jest zajete
 }
 
-void Zwierze::kolizja(int nowyX, int nowyY)
+void Zwierze::kolizja(int nowyX, int nowyY) // popraw walke i usuwanie organizmow?
 {
     if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
-        std::cout << "Atakujacy " << getNazwa() << " wygrywa i zajmuje "
-"pole broniacego " << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa() << std::endl;
+        std:: cout << getNazwa() << " z pola [" << polozenie.y << "]["
+            << polozenie.x << "] wygrywa pojedynek z "
+            << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
+            << " [" << nowyY << "][" << nowyX <<"] i zajmuje jego pole\n";
+
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
     }
     else
     {
         std::cout << "Atakujacy przegrywa i zwalnia pole\n";
-        aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this); // setting nullptr
-        aktualnySwiat->usunOrganizm(this);
+        //aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this); // setting nullptr
+        aktualnySwiat->usunOrganizm(polozenie.x, polozenie.y, this);
     }
 }

@@ -5,6 +5,7 @@
 #include "WirtualnySwiat.h"
 
 #include <iostream>
+#include <algorithm>
 //#include <cstdlib>
 //#include <ctime>
 
@@ -140,6 +141,15 @@ void WirtualnySwiat::wykonajTure()
 void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY)
 {
     organizmy[x][y] = nullptr;
+    if (organizmy[nowyX][nowyY] != nullptr)
+    {
+        delete organizmy[nowyX][nowyY];
+        // usun wskaznik z vectora kolejnoscOrganizmow
+
+        vector<Organizm*>::iterator it;
+        it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizmy[nowyX][nowyY]);
+        kolejnoscOrganizmow.erase(it);
+    }
     organizmy[nowyX][nowyY] = organizm;
 }
 
