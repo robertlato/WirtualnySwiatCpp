@@ -25,6 +25,11 @@
 
 using namespace std;
 
+void rysujMenu()
+{
+    cout << "Witualny swiat\n1. Wykonaj ture\n2. Zakoncz program\n\n\n";
+}
+
 int main()
 {
     // TODO: dopracuj main
@@ -33,16 +38,19 @@ int main()
     WirtualnySwiat pierwszySwiat;
     pierwszySwiat.rysujSwiat();
     char operacja = 0;
+    rysujMenu();
     while (operacja != '2')
     {
-        system("clear");
-        cout << "Witualny swiat\n1. Wykonaj ture\n2. Zakoncz program\n";
-        operacja = getchar();
+//        operacja = getchar();
+        cin >> operacja;
         switch (operacja)
         {
             case '1':
+                //system("clear");
+                cout << "Wykonuje ture numer: " << pierwszySwiat.tura + 1 << endl;
                 pierwszySwiat.wykonajTure();
                 pierwszySwiat.rysujSwiat();
+                rysujMenu();
 
                 break;
 
@@ -51,6 +59,7 @@ int main()
 
             default:
                 cout << "Zly input, sprobuj ponownie\n";
+                cout << "operacja = " << operacja << endl;
                 break;
         }
     }
