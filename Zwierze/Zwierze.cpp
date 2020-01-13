@@ -33,6 +33,9 @@ void Zwierze::akcja()
     if (aktualnySwiat->getOrganizm(nowyX, nowyY) == nullptr) // nowe pole jest wolne
     {
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
+        polozenie.x = nowyX;
+        polozenie.y = nowyY;
+        //this->setPolozenie(nowyX, nowyY); // zapisuje zmiane polozenia w polach organizmu
     }
     else if (nowyX == polozenie.x && nowyY == polozenie.y){} // organizm nie ruszyl sie w tej turze
     else
@@ -49,6 +52,8 @@ void Zwierze::kolizja(int nowyX, int nowyY)
             << " [" << nowyY << "][" << nowyX <<"] i zajmuje jego pole\n";
 
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
+        polozenie.x = nowyX;
+        polozenie.y = nowyY;
     }
     else
     {

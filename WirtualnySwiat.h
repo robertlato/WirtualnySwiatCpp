@@ -15,7 +15,7 @@ class WirtualnySwiat {
     Organizm*** organizmy;
     int iloscOrganizmow;
     std::vector <Organizm*> kolejnoscOrganizmow;
-    int rozmiar;
+    int rozmiar; // rozmiar tablicy2D: rozmiar x rozmiar
 
 public:
     int tura = 0;

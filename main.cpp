@@ -46,7 +46,7 @@ int main()
         switch (operacja)
         {
             case '1':
-                //system("clear");
+                //system("clear"); // czyszczenie okna w clion nie dziala
                 cout << "Wykonuje ture numer: " << pierwszySwiat.tura + 1 << endl;
                 pierwszySwiat.wykonajTure();
                 pierwszySwiat.rysujSwiat();
@@ -55,6 +55,7 @@ int main()
                 break;
 
             case'2':
+                // koncze program
                 break;
 
             default:

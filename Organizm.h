@@ -53,6 +53,7 @@ public:
     virtual ~Organizm()
     {}
 
+    void setPolozenie(int nowyX, int nowyY);
 
 protected:
     char znak;
