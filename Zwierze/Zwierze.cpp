@@ -45,7 +45,13 @@ void Zwierze::akcja()
 
 void Zwierze::kolizja(int nowyX, int nowyY)
 {
-    if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
+    // rozmnazanie
+     if (getNazwa() == aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa())
+    {
+        // wybierz nowe, niezajete pole
+        // stworz nowy organizm
+    }
+    else if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
         std:: cout << getNazwa() << " z pola [" << polozenie.y << "]["
             << polozenie.x << "] wygrywa pojedynek z "

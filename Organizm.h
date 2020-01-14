@@ -53,7 +53,7 @@ public:
         return sila;
     }
 
-
+// TODO: getNazwa jako funckja czysto virtualna? przetestuj
     virtual ~Organizm()
     {}
 
