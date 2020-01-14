@@ -21,6 +21,7 @@ void Zwierze::akcja()
     int rozmiarSwiata = aktualnySwiat->getRozmiar();
     int nowyX = rozmiarSwiata;
     int nowyY = rozmiarSwiata;
+    // znajdz nowe wspolrzedne nie wychodzace poza zakres rozmiaruSwiata
     while (nowyX > rozmiarSwiata - 1 || nowyY > rozmiarSwiata - 1)
     {
         // rand() % 3 + n daje nam 3 wartosci: n-1, n, n+1
