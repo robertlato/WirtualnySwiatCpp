@@ -14,13 +14,17 @@ class WirtualnySwiat;
 
 class Organizm {
 public:
+
+    // TODO: specyfika metody akcja() dla poszczegolnych ras
+    // TODO: specyfika metody kolizja() dla poszczegolnych ras
+    // TODO: rozmnazanie() w ramach metody kolizja():
+    //  kazdorazowe spotkanie dwoch tych samych gatunkow powoduje pojawienie sie nowego organizmu
     virtual void akcja() = 0;
 
     virtual void kolizja(int nowyX, int nowyY) = 0;
 
     virtual std::string getNazwa() = 0;
 
-    //void rysowanie();
 
     static bool porownaj(Organizm *pierwszy, Organizm *drugi)
     {
@@ -52,8 +56,6 @@ public:
 
     virtual ~Organizm()
     {}
-
-    void setPolozenie(int nowyX, int nowyY);
 
 protected:
     char znak;

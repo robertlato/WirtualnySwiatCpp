@@ -23,6 +23,7 @@ void Zwierze::akcja()
     int nowyY = rozmiarSwiata;
     while (nowyX > rozmiarSwiata - 1 || nowyY > rozmiarSwiata - 1)
     {
+        // rand() % 3 + n daje nam 3 wartosci: n-1, n, n+1
         nowyX = abs((rand() % 3) + (polozenie.x - 1));
         nowyY = abs((rand() % 3) + (polozenie.y - 1));
     }
