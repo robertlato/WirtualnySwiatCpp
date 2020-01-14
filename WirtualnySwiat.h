@@ -46,5 +46,7 @@ public:
 
 };
 
+// dodaje komentarz
+
 
 #endif //WIRTUALNY_SWIAT_WIRTUALNYSWIAT_H
