@@ -203,3 +203,73 @@ void WirtualnySwiat::usunOrganizm(int x, int y, Organizm* organizm)
 
     delete organizm;
 }
+
+void WirtualnySwiat::createOrganizm(int x, int y, char znak)
+{
+    switch (znak)
+    {
+        case 'C':
+            organizmy[x][y] = new Ciern(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'D':
+            organizmy[x][y] = new Dzik(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'G':
+            organizmy[x][y] = new Guarana(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'L':
+            organizmy[x][y] = new Lew(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'O':
+            organizmy[x][y] = new Owca(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'T':
+            organizmy[x][y] = new Trawa(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'W':
+            organizmy[x][y] = new Wilk(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'Z':
+            organizmy[x][y] = new Zmija(x, y, this);
+            // dalszy kod
+            break;
+
+        default:
+            break;
+    }
+
+    kolejnoscOrganizmow.push_back(organizmy[x][y]);
+    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+
+
+    cout << "Utworzono nowy organizm o znaku: " << znak << ". Jego pole to: ["
+            << x << "]" << "[" << y << "].\n";
+}
+
+
+bool WirtualnySwiat::zajetoscPola(int x, int y) // true jezeli pole zajete lub pole wybiega poza tablice swiata
+{
+    return !(organizmy[x][y] == nullptr && czyWGranicy(x, y));
+}
+
+bool WirtualnySwiat::czyWGranicy(int x, int y)
+{
+    return !(x >= rozmiar || x < 0 ||
+             y >= rozmiar || y < 0);
+}
+
+

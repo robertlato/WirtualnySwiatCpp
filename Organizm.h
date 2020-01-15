@@ -53,6 +53,10 @@ public:
         return sila;
     }
 
+    int getPolozenieX(){return polozenie.x;}
+    int getPolozenieY(){return polozenie.y;}
+
+
 // TODO: getNazwa jako funckja czysto virtualna? przetestuj
     virtual ~Organizm()
     {}

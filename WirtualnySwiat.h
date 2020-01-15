@@ -44,6 +44,12 @@ public:
 
     void ustalKolejnosc();
 
+    bool zajetoscPola(int x, int y); // true jezeli pole zajete lub pole wybiega poza tablice swiata
+
+    bool czyWGranicy(int x, int y);
+
+    void createOrganizm(int x, int y, char znak);
+
 };
 
 
