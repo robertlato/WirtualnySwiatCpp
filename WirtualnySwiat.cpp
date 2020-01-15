@@ -263,7 +263,10 @@ void WirtualnySwiat::createOrganizm(int x, int y, char znak)
 
 bool WirtualnySwiat::zajetoscPola(int x, int y) // true jezeli pole zajete lub pole wybiega poza tablice swiata
 {
-    return !(organizmy[x][y] == nullptr && czyWGranicy(x, y));
+    if(czyWGranicy(x, y)) return organizmy[x][y] != nullptr;
+    return true;
+
+    //return !(organizmy[x][y] == nullptr && czyWGranicy(x, y));
 }
 
 bool WirtualnySwiat::czyWGranicy(int x, int y)
