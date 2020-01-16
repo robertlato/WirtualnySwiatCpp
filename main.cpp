@@ -35,7 +35,7 @@ int main()
     // TODO: dopracuj main
 
     cout << "Inicjuje wirtualny swiat...\n";
-    WirtualnySwiat pierwszySwiat;
+    WirtualnySwiat pierwszySwiat(20, 100);
     pierwszySwiat.rysujSwiat();
     char operacja = 0;
     rysujMenu();

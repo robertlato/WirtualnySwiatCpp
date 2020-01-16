@@ -4,7 +4,6 @@
 
 #include "Organizm.h"
 
-//static bool porownaj(const Organizm* pierwszy, const Organizm* drugi)
 //{
 //
 //}

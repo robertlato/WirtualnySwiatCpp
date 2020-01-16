@@ -46,7 +46,52 @@ void Zwierze::akcja()
 
 void Zwierze::kolizja(int nowyX, int nowyY)
 {
-    if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
+    // rozmnazanie
+     if (getNazwa() == aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa())
+    {
+//
+//        int rozmiarSwiata = aktualnySwiat->getRozmiar();
+//        int nowyX = rozmiarSwiata;
+//        int nowyY = rozmiarSwiata;
+//        while (aktualnySwiat->zajetoscPola(nowyX, nowyY))
+//        {
+//            while (nowyX > rozmiarSwiata - 1 || nowyY > rozmiarSwiata - 1)
+//            {
+//                // rand() % 3 + n daje nam 3 wartosci: n-1, n, n+1
+//                nowyX = abs((rand() % 3) + (polozenie.x - 1));
+//                nowyY = abs((rand() % 3) + (polozenie.y - 1));
+//            }
+//        }
+        // sprawdz po kolei zajetosc pol, nowy organizm przypisz do pierwszego wolnego pola
+        bool gotowe = false;
+        for (int i = -1; i < 2; i++)
+        {
+            for (int j = -1; j < 2; j++)
+            {
+                if (!aktualnySwiat->zajetoscPola(polozenie.x + i, polozenie.y + j))
+                {
+                    aktualnySwiat->createOrganizm(polozenie.x + i, polozenie.y + j, getZnak());
+                    gotowe = true;
+                    break;
+                }
+                else if(!aktualnySwiat->zajetoscPola(aktualnySwiat->getOrganizm(nowyX, nowyY)->getPolozenieX() + i,
+                    aktualnySwiat->getOrganizm(nowyX, nowyY)->getPolozenieY() + j))
+                {
+                    aktualnySwiat->createOrganizm(aktualnySwiat->getOrganizm(nowyX, nowyY)->getPolozenieX() + i,
+                                                    aktualnySwiat->getOrganizm(nowyX, nowyY)->getPolozenieY() + j,
+                                                    getZnak());
+                    gotowe = true;
+                    break;
+                }
+            }
+            if (gotowe) break;
+        }
+
+
+        // wybierz nowe, niezajete pole
+        // stworz nowy organizm
+    }
+    else if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
         std:: cout << getNazwa() << " z pola [" << polozenie.y << "]["
             << polozenie.x << "] wygrywa pojedynek z "

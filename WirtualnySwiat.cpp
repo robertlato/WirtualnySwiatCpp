@@ -127,8 +127,8 @@ void WirtualnySwiat::ustalKolejnosc()
             }
         }
     }
-    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
-
+    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+    kolejnoscOrganizmow.sort(Organizm::porownaj);
     // USUN BEGIN
     // wypisuje vector kolejnosci:
     cout << "wypisuje kolejnosc po segregacji\n";
@@ -162,11 +162,35 @@ void WirtualnySwiat::rysujSwiat()
 void WirtualnySwiat::wykonajTure()
 {
     tura += 1;
-    for (const auto &i : kolejnoscOrganizmow)
+//    for (const auto &i : kolejnoscOrganizmow)
+//    {
+//        i->akcja();
+//    }
+
+// moglbys wykonac petle const auto, ale przy okazji i tak potrzebujesz
+// zmienna it (iterator) przy usuwaniu
+
+    list<Organizm*>::iterator it;
+    for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
     {
-        i->akcja();
+        if(!(*it)->getDoUsuniecia()) (*it)->akcja();
     }
-    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+    // usun organizmy jezeli sa jakies do usuniecia
+
+    if (!organizmyDoUsuniecia.empty())
+    {
+
+        for (const auto& j : organizmyDoUsuniecia)
+        {
+            it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), j);
+            kolejnoscOrganizmow.erase(it);
+        }
+        organizmyDoUsuniecia.clear();
+    }
+
+
+    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+    kolejnoscOrganizmow.sort(Organizm::porownaj);
 
 //    ustalKolejnosc();
 }
@@ -176,12 +200,13 @@ void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, in
     organizmy[x][y] = nullptr;
     if (organizmy[nowyX][nowyY] != nullptr)
     {
-        delete organizmy[nowyX][nowyY];
-        // usun wskaznik z vectora kolejnoscOrganizmow
-
-        vector<Organizm*>::iterator it;
-        it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizmy[nowyX][nowyY]);
-        kolejnoscOrganizmow.erase(it);
+        usunOrganizm(nowyX, nowyY, organizmy[nowyX][nowyY]);
+//        delete organizmy[nowyX][nowyY];
+//        // usun wskaznik z vectora kolejnoscOrganizmow
+//
+//        list<Organizm*>::iterator it;
+//        it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizmy[nowyX][nowyY]);
+//        kolejnoscOrganizmow.erase(it);
     }
     organizmy[nowyX][nowyY] = organizm;
 }
@@ -197,9 +222,87 @@ void WirtualnySwiat::usunOrganizm(int x, int y, Organizm* organizm)
 
     // usun wskaznik z vectora kolejnoscOrganizmow
 
-    vector<Organizm*>::iterator it;
-    it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizm);
-    kolejnoscOrganizmow.erase(it);
+    organizmyDoUsuniecia.push_back(organizm);
+    organizm->setDoUsuniecia();
 
-    delete organizm;
+
+//    list<Organizm*>::iterator it;
+//    it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizm);
+//    kolejnoscOrganizmow.erase(it);
+//
+//    delete organizm;
 }
+
+void WirtualnySwiat::createOrganizm(int x, int y, char znak)
+{
+    switch (znak)
+    {
+        case 'C':
+            organizmy[x][y] = new Ciern(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'D':
+            organizmy[x][y] = new Dzik(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'G':
+            organizmy[x][y] = new Guarana(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'L':
+            organizmy[x][y] = new Lew(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'O':
+            organizmy[x][y] = new Owca(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'T':
+            organizmy[x][y] = new Trawa(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'W':
+            organizmy[x][y] = new Wilk(x, y, this);
+            // dalszy kod
+            break;
+
+        case 'Z':
+            organizmy[x][y] = new Zmija(x, y, this);
+            // dalszy kod
+            break;
+
+        default:
+            break;
+    }
+
+    kolejnoscOrganizmow.push_back(organizmy[x][y]);
+    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
+//    kolejnoscOrganizmow.sort(Organizm::porownaj);
+
+
+    cout << "Utworzono nowy organizm o znaku: " << znak << ". Jego pole to: ["
+            << x << "]" << "[" << y << "].\n";
+}
+
+
+bool WirtualnySwiat::zajetoscPola(int x, int y) // true jezeli pole zajete lub pole wybiega poza tablice swiata
+{
+    if(czyWGranicy(x, y)) return organizmy[x][y] != nullptr;
+    return true;
+
+    //return !(organizmy[x][y] == nullptr && czyWGranicy(x, y));
+}
+
+bool WirtualnySwiat::czyWGranicy(int x, int y)
+{
+    return !(x >= rozmiar || x < 0 ||
+             y >= rozmiar || y < 0);
+}
+
+

@@ -53,7 +53,14 @@ public:
         return sila;
     }
 
+    int getPolozenieX(){return polozenie.x;}
+    int getPolozenieY(){return polozenie.y;}
 
+    bool getDoUsuniecia(){return doUsuniecia;}
+    void setDoUsuniecia(){doUsuniecia = true;}
+
+
+// TODO: getNazwa jako funckja czysto virtualna? przetestuj
     virtual ~Organizm()
     {}
 
@@ -66,6 +73,7 @@ protected:
         int x = 0;
         int y = 0;
     } polozenie;
+    bool doUsuniecia = false;
 
     WirtualnySwiat *aktualnySwiat = nullptr;
 
