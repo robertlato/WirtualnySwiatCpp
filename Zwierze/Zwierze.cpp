@@ -91,23 +91,25 @@ void Zwierze::kolizja(int nowyX, int nowyY)
         // wybierz nowe, niezajete pole
         // stworz nowy organizm
     }
+    //atakujacy wygrywa
     else if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
     {
-        std:: cout << getNazwa() << " z pola [" << polozenie.y << "]["
-            << polozenie.x << "] wygrywa pojedynek z "
+        std:: cout << getNazwa() << " z pola [" << polozenie.x << "]["
+            << polozenie.y << "] wygrywa pojedynek z "
             << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
-            << " [" << nowyY << "][" << nowyX <<"] i zajmuje jego pole\n";
+            << " [" << nowyX << "][" << nowyY <<"] i zajmuje jego pole\n";
 
         aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
         polozenie.x = nowyX;
         polozenie.y = nowyY;
     }
-    else
+    // atakujacy przegrywa
+     else
     {
-        std:: cout << getNazwa() << " [" << polozenie.y << "]["
-                   << polozenie.x << "] atakuje "
+        std:: cout << getNazwa() << " [" << polozenie.x << "]["
+                   << polozenie.y << "] atakuje "
                    << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
-                   << " [" << nowyY << "][" << nowyX <<"], przegrywa i zwalnia swoje pole\n";
+                   << " [" << nowyX << "][" << nowyY <<"], przegrywa i zwalnia swoje pole\n";
 
         aktualnySwiat->usunOrganizm(polozenie.x, polozenie.y, this);
     }

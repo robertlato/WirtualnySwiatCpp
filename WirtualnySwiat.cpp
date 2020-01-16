@@ -141,15 +141,32 @@ void WirtualnySwiat::ustalKolejnosc()
 
 void WirtualnySwiat::rysujSwiat()
 {
+//    cout << endl;
+//    for (int i = 0; i < rozmiar; i++)
+//    {
+//        for (int j = 0; j < rozmiar; j++)
+//        {
+//            if (organizmy[i][j] == nullptr) cout << '0';
+//            else
+//            {
+//                cout << organizmy[i][j]->getZnak();
+//            }
+//
+//            // organizmy[i][j] = nullptr;
+//        }
+//        cout << endl;
+//    }
+//    cout << endl;
+
     cout << endl;
-    for (int i = 0; i < rozmiar; i++)
+    for (int i = rozmiar - 1; i >= 0; i--)
     {
         for (int j = 0; j < rozmiar; j++)
         {
-            if (organizmy[i][j] == nullptr) cout << '0';
+            if (organizmy[j][i] == nullptr) cout << '0';
             else
             {
-                cout << organizmy[i][j]->getZnak();
+                cout << organizmy[j][i]->getZnak();
             }
 
             // organizmy[i][j] = nullptr;
@@ -157,6 +174,7 @@ void WirtualnySwiat::rysujSwiat()
         cout << endl;
     }
     cout << endl;
+
 }
 
 void WirtualnySwiat::wykonajTure()
@@ -174,7 +192,7 @@ void WirtualnySwiat::wykonajTure()
     for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
     {
         if(!(*it)->getDoUsuniecia()) (*it)->akcja();
-        (*it)->raiseWiek();
+        (*it)->increaseWiek();
     }
     // usun organizmy jezeli sa jakies do usuniecia
 

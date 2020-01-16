@@ -51,7 +51,7 @@ public:
         return sila;
     }
 
-    void raiseWiek(){wiek++;}
+    void increaseWiek(){wiek++;}
 
     int getPolozenieX(){return polozenie.x;}
     int getPolozenieY(){return polozenie.y;}

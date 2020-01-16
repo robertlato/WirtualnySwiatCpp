@@ -73,4 +73,6 @@ Uzywasz listy do ustalenia kolejnosci organizmow - w tym przypadku jest to prefe
  nie uwzgledni realokacji kontenera w pamieci. Czyli w przypadku listy trzeba obsluzyc
  tylko usuwanie elementow, a w przypadku vectora trzeba dodawanie oraz usuwanie.
 
+ Zrodlo: https://stackoverflow.com/questions/6438086/iterator-invalidation-rules
+
 */
