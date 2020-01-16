@@ -17,8 +17,6 @@ public:
 
     // TODO: specyfika metody akcja() dla poszczegolnych ras
     // TODO: specyfika metody kolizja() dla poszczegolnych ras
-    // TODO: rozmnazanie() w ramach metody kolizja():
-    //  kazdorazowe spotkanie dwoch tych samych gatunkow powoduje pojawienie sie nowego organizmu
     virtual void akcja() = 0;
 
     virtual void kolizja(int nowyX, int nowyY) = 0;
@@ -52,6 +50,8 @@ public:
     {
         return sila;
     }
+
+    void raiseWiek(){wiek++;}
 
     int getPolozenieX(){return polozenie.x;}
     int getPolozenieY(){return polozenie.y;}

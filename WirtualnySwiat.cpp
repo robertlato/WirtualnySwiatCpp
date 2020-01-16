@@ -174,6 +174,7 @@ void WirtualnySwiat::wykonajTure()
     for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
     {
         if(!(*it)->getDoUsuniecia()) (*it)->akcja();
+        (*it)->raiseWiek();
     }
     // usun organizmy jezeli sa jakies do usuniecia
 
