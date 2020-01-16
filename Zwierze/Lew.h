@@ -15,7 +15,6 @@ public:
     Lew(int x, int y, WirtualnySwiat *swiat);
 
     ~Lew();
-
     std::string getNazwa()
     {
         return ("Lew");

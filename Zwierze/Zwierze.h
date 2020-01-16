@@ -10,9 +10,9 @@
 
 class Zwierze : public Organizm {
 public:
-    void akcja();
+    void akcja() override;
 
-    void kolizja(int nowyX, int nowyY);
+    void kolizja(int nowyX, int nowyY) override;
 
     virtual ~Zwierze(){}
 
