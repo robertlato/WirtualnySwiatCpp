@@ -19,7 +19,7 @@ public:
     // TODO: specyfika metody kolizja() dla poszczegolnych ras
     virtual void akcja() = 0;
 
-    virtual void kolizja(int nowyX, int nowyY) = 0;
+    virtual void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) = 0;
 
     virtual std::string getNazwa() = 0;
 
@@ -51,10 +51,18 @@ public:
         return sila;
     }
 
+    void increaseSila(int x)
+    {
+        sila += x;
+    }
+
     void increaseWiek(){wiek++;}
 
     int getPolozenieX(){return polozenie.x;}
     int getPolozenieY(){return polozenie.y;}
+
+    void setPolozenieX(int x) {polozenie.x = x;}
+    void setPolozenieY(int y) {polozenie.y = y;}
 
     bool getDoUsuniecia(){return doUsuniecia;}
     void setDoUsuniecia(){doUsuniecia = true;}

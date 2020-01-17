@@ -16,6 +16,8 @@ public:
 
     ~Guarana();
 
+    void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override;
+
     std::string getNazwa() {
         return ("Guarana");
     }

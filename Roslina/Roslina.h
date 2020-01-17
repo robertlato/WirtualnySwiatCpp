@@ -13,7 +13,7 @@ public:
 // TODO: implementacja rozprzestrzenainia sie roslin w metodzie akcja()
     void akcja(){}
 
-    void kolizja(int nowyX, int nowyY){}
+    void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override{}
 
 
     virtual ~Roslina(){}

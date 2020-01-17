@@ -15,13 +15,16 @@ Zmija::Zmija(int x, int y, WirtualnySwiat *swiat) {
 
 }
 
-void Zmija::kolizja(int nowyX, int nowyY)
+void Zmija::kolizja(int nowyX, int nowyY, Organizm* przeciwnik)
 {
-    Zwierze::kolizja(nowyX, nowyY);
-    if (this->getDoUsuniecia())
+    Zwierze::kolizja(nowyX, nowyY, przeciwnik);
+    if (this->getDoUsuniecia()) // zmija przegrala pojedynek z przeciwnikiem
     {
-        aktualnySwiat->usunOrganizm(nowyX, nowyY, aktualnySwiat->getOrganizm(nowyX, nowyY));
-        std::cout << "\nAtakujacy organizm umiera w wyniku zatrucia przez zmije\n";
+        aktualnySwiat->usunOrganizm(nowyX, nowyY, przeciwnik);
+        //std::cout << "\nOrganizm umiera w wyniku zatrucia przez zmije\n";
+        std::cout << przeciwnik->getNazwa() << " [" << przeciwnik->getPolozenieX()
+            << "][" << przeciwnik->getPolozenieY() <<"] umiera w wyniku zatrucia przez zmije ["
+            << polozenie.x << "][" << polozenie.y << "]\n";
     }
 
 }

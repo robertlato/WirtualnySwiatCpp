@@ -21,7 +21,7 @@ public:
         return ("Zmija");
     }
 
-    void kolizja(int nowyX, int nowyY) override;
+    void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override;
 };
 
 

@@ -15,6 +15,9 @@ public:
     Lew(int x, int y, WirtualnySwiat *swiat);
 
     ~Lew();
+
+    //void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override;
+
     std::string getNazwa()
     {
         return ("Lew");

@@ -305,8 +305,11 @@ void WirtualnySwiat::createOrganizm(int x, int y, char znak)
 //    kolejnoscOrganizmow.sort(Organizm::porownaj);
 
 
-    cout << "Utworzono nowy organizm o znaku: " << znak << ". Jego pole to: ["
-            << x << "]" << "[" << y << "].\n";
+//    cout << "Utworzono nowy organizm o znaku: " << znak << ". Jego pole to: ["
+//         << x << "]" << "[" << y << "].\n";
+    cout << "Utworzono nowy organizm: " << organizmy[x][y]->getNazwa()
+        <<  ". Jego pole to: ["
+        << x << "]" << "[" << y << "].\n";
 }
 
 

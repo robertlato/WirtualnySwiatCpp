@@ -41,35 +41,35 @@ void Zwierze::akcja()
     }
     else if (nowyX == polozenie.x && nowyY == polozenie.y){} // organizm nie ruszyl sie w tej turze
     else
-        kolizja(nowyX, nowyY); // nowe pole jest zajete
+        kolizja(nowyX, nowyY, aktualnySwiat->getOrganizm(nowyX, nowyY)); // nowe pole jest zajete
 }
 
-void Zwierze::kolizja(int nowyX, int nowyY)
+void Zwierze::kolizja(int nowyX, int nowyY, Organizm* przeciwnik)
 {
-    if(aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa() == "Lew" &&
-            sila < 5)
+//    if(przeciwnik->getNazwa() == "Lew" &&
+//            sila < 5)
+//    {
+//        return;
+//    }
+    if (przeciwnik->getNazwa() == "Lew" && getSila() < 5) return;
+    else if (przeciwnik->getNazwa() == "Guarana")
     {
-        return;
+        przeciwnik->kolizja(nowyX, nowyY, this);
     }
+//    else if (aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa() == "Guarana")
+//    {
+//        sila += 3;
+//    }
+//    else if (przeciwnik->getNazwa() == "Guarana")
+//    {
+//        przeciwnik->kolizja(polozenie.x, polozenie.y, this);
+//    }
     else
     {
 
-        // rozmnazanie
-         if (getNazwa() == aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa())
+        // ROZMNAZANIE
+         if (getNazwa() == przeciwnik->getNazwa())
         {
-    //
-    //        int rozmiarSwiata = aktualnySwiat->getRozmiar();
-    //        int nowyX = rozmiarSwiata;
-    //        int nowyY = rozmiarSwiata;
-    //        while (aktualnySwiat->zajetoscPola(nowyX, nowyY))
-    //        {
-    //            while (nowyX > rozmiarSwiata - 1 || nowyY > rozmiarSwiata - 1)
-    //            {
-    //                // rand() % 3 + n daje nam 3 wartosci: n-1, n, n+1
-    //                nowyX = abs((rand() % 3) + (polozenie.x - 1));
-    //                nowyY = abs((rand() % 3) + (polozenie.y - 1));
-    //            }
-    //        }
             // sprawdz po kolei zajetosc pol, nowy organizm przypisz do pierwszego wolnego pola
             bool gotowe = false;
             for (int i = -1; i < 2; i++)
@@ -99,27 +99,45 @@ void Zwierze::kolizja(int nowyX, int nowyY)
             // wybierz nowe, niezajete pole
             // stworz nowy organizm
         }
-        //atakujacy wygrywa
-        else if (this->sila >= aktualnySwiat->getOrganizm(nowyX, nowyY)->getSila())
+        //ATAKUJACY WYGRYWA
+        else if (this->sila >= przeciwnik->getSila())
         {
-            std:: cout << getNazwa() << " z pola [" << polozenie.x << "]["
+            std:: cout << getNazwa() << " [" << polozenie.x << "]["
                 << polozenie.y << "] wygrywa pojedynek z "
-                << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
-                << " [" << nowyX << "][" << nowyY <<"] i zajmuje jego pole\n";
+                << przeciwnik->getNazwa()
+                << " [" << przeciwnik->getPolozenieX()
+                << "][" << przeciwnik->getPolozenieY()
+                <<"]. Pole wygranego to: [" << nowyX << "][" << nowyY << "]\n";
 
-            aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
-            polozenie.x = nowyX;
-            polozenie.y = nowyY;
+            if (polozenie.x != nowyX || polozenie.y != nowyY) // wygrany nie byl organizmem broniacym sie
+            {
+                aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
+                polozenie.x = nowyX;
+                polozenie.y = nowyY;
+            } else
+                aktualnySwiat->usunOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik);
+
         }
-        // atakujacy przegrywa
+        // ATAKUJACY PRZEGRYWA
          else
         {
             std:: cout << getNazwa() << " [" << polozenie.x << "]["
-                       << polozenie.y << "] atakuje "
-                       << aktualnySwiat->getOrganizm(nowyX, nowyY)->getNazwa()
-                       << " [" << nowyX << "][" << nowyY <<"], przegrywa i zwalnia swoje pole\n";
+                       << polozenie.y << "] przegrywa pojedynek z "
+                       << przeciwnik->getNazwa()
+                       << " [" << przeciwnik->getPolozenieX() << "]["
+                       << przeciwnik->getPolozenieY() <<"],  i zwalnia swoje pole. ";
 
             aktualnySwiat->usunOrganizm(polozenie.x, polozenie.y, this);
+
+            if (polozenie.x == nowyX && polozenie.y == nowyY) // wygrany byl organizmem wykonujacym ruch
+            {
+                // wygrany zajmuje pole przegranego
+                aktualnySwiat->setOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik, nowyX, nowyY);
+                przeciwnik->setPolozenieX(nowyX);
+                przeciwnik->setPolozenieY(nowyY);
+            }
+            std::cout << "Pole wygranego to: [" << przeciwnik->getPolozenieX() << "]["
+                << przeciwnik->getPolozenieY() << "]\n";
         }
     }
 }
