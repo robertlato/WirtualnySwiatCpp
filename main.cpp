@@ -33,12 +33,11 @@ int main()
     rysujMenu();
     while (operacja != '2')
     {
-//        operacja = getchar();
         cin >> operacja;
         switch (operacja)
         {
             case '1':
-                //system("clear"); // czyszczenie okna w clion nie dziala
+                system("clear"); // czyszczenie okna w clion nie dziala
                 cout << "Wykonuje ture numer: " << pierwszySwiat.getTura() + 1 << endl;
                 pierwszySwiat.wykonajTure();
                 pierwszySwiat.rysujSwiat();
