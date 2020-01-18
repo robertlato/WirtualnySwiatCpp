@@ -18,6 +18,7 @@ CMakeFiles/wirtualny_swiat.dir/Roslina/Guarana.cpp.o: ../WirtualnySwiat.h
 CMakeFiles/wirtualny_swiat.dir/Roslina/Roslina.cpp.o: ../Organizm.h
 CMakeFiles/wirtualny_swiat.dir/Roslina/Roslina.cpp.o: ../Roslina/Roslina.cpp
 CMakeFiles/wirtualny_swiat.dir/Roslina/Roslina.cpp.o: ../Roslina/Roslina.h
+CMakeFiles/wirtualny_swiat.dir/Roslina/Roslina.cpp.o: ../WirtualnySwiat.h
 
 CMakeFiles/wirtualny_swiat.dir/Roslina/Trawa.cpp.o: ../Organizm.h
 CMakeFiles/wirtualny_swiat.dir/Roslina/Trawa.cpp.o: ../Roslina/Roslina.h

@@ -187,12 +187,14 @@ void WirtualnySwiat::wykonajTure()
 
 // moglbys wykonac petle const auto, ale przy okazji i tak potrzebujesz
 // zmienna it (iterator) przy usuwaniu
-
+    int tabSize = kolejnoscOrganizmow.size() - 1; // kolejnoscOrganizmow.size(int)
     list<Organizm*>::iterator it;
-    for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
+//    for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
+    for (it = kolejnoscOrganizmow.begin(); tabSize != 0; ++it)
     {
         if(!(*it)->getDoUsuniecia()) (*it)->akcja();
         (*it)->increaseWiek();
+        tabSize--;
     }
     // usun organizmy jezeli sa jakies do usuniecia
 

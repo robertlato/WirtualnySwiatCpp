@@ -11,7 +11,7 @@
 class Roslina : public Organizm {
 public:
 // TODO: implementacja rozprzestrzenainia sie roslin w metodzie akcja()
-    void akcja(){}
+    void akcja() override;
 
     void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override{}
 

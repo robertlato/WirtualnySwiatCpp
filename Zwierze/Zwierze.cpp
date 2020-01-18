@@ -109,13 +109,17 @@ void Zwierze::kolizja(int nowyX, int nowyY, Organizm* przeciwnik)
                 << "][" << przeciwnik->getPolozenieY()
                 <<"]. Pole wygranego to: [" << nowyX << "][" << nowyY << "]\n";
 
-            if (polozenie.x != nowyX || polozenie.y != nowyY) // wygrany nie byl organizmem broniacym sie
-            {
+//            if (polozenie.x != nowyX || polozenie.y != nowyY) // wygrany nie byl organizmem broniacym sie
+//            {
+//                aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
+//                polozenie.x = nowyX;
+//                polozenie.y = nowyY;
+//            } else
+//                aktualnySwiat->usunOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik);
+
                 aktualnySwiat->setOrganizm(polozenie.x, polozenie.y, this, nowyX, nowyY);
                 polozenie.x = nowyX;
                 polozenie.y = nowyY;
-            } else
-                aktualnySwiat->usunOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik);
 
         }
         // ATAKUJACY PRZEGRYWA
@@ -129,13 +133,13 @@ void Zwierze::kolizja(int nowyX, int nowyY, Organizm* przeciwnik)
 
             aktualnySwiat->usunOrganizm(polozenie.x, polozenie.y, this);
 
-            if (polozenie.x == nowyX && polozenie.y == nowyY) // wygrany byl organizmem wykonujacym ruch
-            {
-                // wygrany zajmuje pole przegranego
-                aktualnySwiat->setOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik, nowyX, nowyY);
-                przeciwnik->setPolozenieX(nowyX);
-                przeciwnik->setPolozenieY(nowyY);
-            }
+//            if (polozenie.x == nowyX && polozenie.y == nowyY) // wygrany byl organizmem wykonujacym ruch
+//            {
+//                // wygrany zajmuje pole przegranego
+//                aktualnySwiat->setOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik, nowyX, nowyY);
+//                przeciwnik->setPolozenieX(nowyX);
+//                przeciwnik->setPolozenieY(nowyY);
+//            }
             std::cout << "Pole wygranego to: [" << przeciwnik->getPolozenieX() << "]["
                 << przeciwnik->getPolozenieY() << "]\n";
         }
