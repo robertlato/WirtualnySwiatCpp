@@ -2,12 +2,13 @@
 // Created by Robert on 18.12.2019.
 //
 
-#include "WirtualnySwiat.h"
 
 #include <iostream>
 #include <algorithm>
 //#include <cstdlib>
 //#include <ctime>
+
+#include "WirtualnySwiat.h"
 
 #include "Roslina/Ciern.h"
 #include "Roslina/Guarana.h"
@@ -44,7 +45,6 @@ WirtualnySwiat::WirtualnySwiat(int rozmiar, int iloscOrganizmow) {
     }
 
     // tworze randomowe organizmy w randomowych polach
-    // cout << "Ilosc organizmow = " << iloscOrganizmow << endl;
     int i = iloscOrganizmow;
     srand(time(0));
     while (i > 0) {
@@ -96,23 +96,12 @@ WirtualnySwiat::WirtualnySwiat(int rozmiar, int iloscOrganizmow) {
                     break;
 
                 default:
-//                    cout << "Trafil sie default.. boomer\n"
-//                            "Wylosowany organizm = "
-//                            << wylosowanyOrganizm << endl;
                     break;
             }
-//            cout << "Zmniejszam i o 1\niloscOrganizmow = " << i << endl;
             i -= 1;
-//            kolejnoscOrganizmow.push_back(organizmy[x][y]);
         }
     }
     ustalKolejnosc();
-//    sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
-//    // wypisuje vector kolejnosci:
-//    cout << "wypisuje kolejnosc po segregacji\n";
-//    for (const auto &j : kolejnoscOrganizmow) cout << j->getZnak() << ", inicjatywa = "
-//        << j->getInicjatywa() << ", wiek = " << j->getWiek()
-//        << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
 }
 
 void WirtualnySwiat::ustalKolejnosc()
@@ -127,37 +116,12 @@ void WirtualnySwiat::ustalKolejnosc()
             }
         }
     }
-    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
     kolejnoscOrganizmow.sort(Organizm::porownaj);
-    // USUN BEGIN
-    // wypisuje vector kolejnosci:
-    cout << "wypisuje kolejnosc po segregacji\n";
-    for (const auto &j : kolejnoscOrganizmow) cout << j->getZnak() << ", inicjatywa = "
-                       << j->getInicjatywa() << ", wiek = " << j->getWiek()
-                       << ", pierwszenstwo = " << j->getPierwszenstwo() << endl;
-    // USUN END
 }
 
 
 void WirtualnySwiat::rysujSwiat()
 {
-//    cout << endl;
-//    for (int i = 0; i < rozmiar; i++)
-//    {
-//        for (int j = 0; j < rozmiar; j++)
-//        {
-//            if (organizmy[i][j] == nullptr) cout << '0';
-//            else
-//            {
-//                cout << organizmy[i][j]->getZnak();
-//            }
-//
-//            // organizmy[i][j] = nullptr;
-//        }
-//        cout << endl;
-//    }
-//    cout << endl;
-
     cout << endl;
     for (int i = rozmiar - 1; i >= 0; i--)
     {
@@ -168,8 +132,6 @@ void WirtualnySwiat::rysujSwiat()
             {
                 cout << organizmy[j][i]->getZnak();
             }
-
-            // organizmy[i][j] = nullptr;
         }
         cout << endl;
     }
@@ -180,27 +142,21 @@ void WirtualnySwiat::rysujSwiat()
 void WirtualnySwiat::wykonajTure()
 {
     tura += 1;
-//    for (const auto &i : kolejnoscOrganizmow)
-//    {
-//        i->akcja();
-//    }
 
 // moglbys wykonac petle const auto, ale przy okazji i tak potrzebujesz
 // zmienna it (iterator) przy usuwaniu
-    int tabSize = kolejnoscOrganizmow.size() - 1; // kolejnoscOrganizmow.size(int)
+    int tabSize = kolejnoscOrganizmow.size() - 1;
     list<Organizm*>::iterator it;
-//    for (it = kolejnoscOrganizmow.begin(); it != kolejnoscOrganizmow.end(); ++it)
     for (it = kolejnoscOrganizmow.begin(); tabSize != 0; ++it)
     {
         if(!(*it)->getDoUsuniecia()) (*it)->akcja();
         (*it)->increaseWiek();
         tabSize--;
     }
-    // usun organizmy jezeli sa jakies do usuniecia
 
+    // usun organizmy jezeli sa jakies do usuniecia
     if (!organizmyDoUsuniecia.empty())
     {
-
         for (const auto& j : organizmyDoUsuniecia)
         {
             it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), j);
@@ -208,12 +164,7 @@ void WirtualnySwiat::wykonajTure()
         }
         organizmyDoUsuniecia.clear();
     }
-
-
-    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
     kolejnoscOrganizmow.sort(Organizm::porownaj);
-
-//    ustalKolejnosc();
 }
 
 void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY)
@@ -222,12 +173,6 @@ void WirtualnySwiat::setOrganizm(int x, int y, Organizm* organizm, int nowyX, in
     if (organizmy[nowyX][nowyY] != nullptr)
     {
         usunOrganizm(nowyX, nowyY, organizmy[nowyX][nowyY]);
-//        delete organizmy[nowyX][nowyY];
-//        // usun wskaznik z vectora kolejnoscOrganizmow
-//
-//        list<Organizm*>::iterator it;
-//        it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizmy[nowyX][nowyY]);
-//        kolejnoscOrganizmow.erase(it);
     }
     organizmy[nowyX][nowyY] = organizm;
 }
@@ -242,16 +187,8 @@ void WirtualnySwiat::usunOrganizm(int x, int y, Organizm* organizm)
     organizmy[x][y] = nullptr;
 
     // usun wskaznik z vectora kolejnoscOrganizmow
-
     organizmyDoUsuniecia.push_back(organizm);
     organizm->setDoUsuniecia();
-
-
-//    list<Organizm*>::iterator it;
-//    it = find(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), organizm);
-//    kolejnoscOrganizmow.erase(it);
-//
-//    delete organizm;
 }
 
 void WirtualnySwiat::createOrganizm(int x, int y, char znak)
@@ -303,12 +240,6 @@ void WirtualnySwiat::createOrganizm(int x, int y, char znak)
     }
 
     kolejnoscOrganizmow.push_back(organizmy[x][y]);
-    //sort(kolejnoscOrganizmow.begin(), kolejnoscOrganizmow.end(), Organizm::porownaj);
-//    kolejnoscOrganizmow.sort(Organizm::porownaj);
-
-
-//    cout << "Utworzono nowy organizm o znaku: " << znak << ". Jego pole to: ["
-//         << x << "]" << "[" << y << "].\n";
     cout << "Utworzono nowy organizm: " << organizmy[x][y]->getNazwa()
         <<  ". Jego pole to: ["
         << x << "]" << "[" << y << "].\n";
@@ -319,8 +250,6 @@ bool WirtualnySwiat::zajetoscPola(int x, int y) // true jezeli pole zajete lub p
 {
     if(czyWGranicy(x, y)) return organizmy[x][y] != nullptr;
     return true;
-
-    //return !(organizmy[x][y] == nullptr && czyWGranicy(x, y));
 }
 
 bool WirtualnySwiat::czyWGranicy(int x, int y)

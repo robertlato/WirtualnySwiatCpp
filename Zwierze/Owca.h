@@ -13,13 +13,8 @@ class Owca : public Zwierze {
 public:
 
     Owca(int x, int y, WirtualnySwiat *swiat);
-
     ~Owca();
-
-    std::string getNazwa()
-    {
-        return ("Owca");
-    }
+    std::string getNazwa(){return ("Owca");}
 
 };
 

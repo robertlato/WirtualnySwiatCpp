@@ -15,62 +15,35 @@ class WirtualnySwiat;
 class Organizm {
 public:
 
-    // TODO: specyfika metody akcja() dla poszczegolnych ras
-    // TODO: specyfika metody kolizja() dla poszczegolnych ras
     virtual void akcja() = 0;
-
     virtual void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) = 0;
-
-    virtual std::string getNazwa() = 0;
-
 
     static bool porownaj(Organizm *pierwszy, Organizm *drugi)
     {
         return (pierwszy->getPierwszenstwo() > drugi->getPierwszenstwo());
     }
 
-    int getPierwszenstwo()
-    {
-        return (wiek+inicjatywa);
-    }
+    virtual ~Organizm(){}
 
+    // GETTERS
+    virtual std::string getNazwa() = 0;
+    int getPierwszenstwo(){return (wiek+inicjatywa);}
     int getWiek(){return wiek;}
-
-    char getZnak()
-    {
-        return this->znak;
-    }
-
-    int getInicjatywa()
-    {
-        return this->inicjatywa;
-    }
-
-    int getSila()
-    {
-        return sila;
-    }
-
-    void increaseSila(int x)
-    {
-        sila += x;
-    }
-
-    void increaseWiek(){wiek++;}
-
+    char getZnak(){return this->znak;}
+    int getInicjatywa(){return this->inicjatywa;}
+    int getSila(){return sila;}
     int getPolozenieX(){return polozenie.x;}
     int getPolozenieY(){return polozenie.y;}
+    bool getDoUsuniecia(){return doUsuniecia;}
 
+    // SETTERS
+    void increaseSila(int x){sila += x;}
+    void increaseWiek(){wiek++;}
     void setPolozenieX(int x) {polozenie.x = x;}
     void setPolozenieY(int y) {polozenie.y = y;}
-
-    bool getDoUsuniecia(){return doUsuniecia;}
     void setDoUsuniecia(){doUsuniecia = true;}
 
 
-// TODO: getNazwa jako funckja czysto virtualna? przetestuj
-    virtual ~Organizm()
-    {}
 
 protected:
     char znak;
@@ -82,9 +55,7 @@ protected:
         int y = 0;
     } polozenie;
     bool doUsuniecia = false;
-
     WirtualnySwiat *aktualnySwiat = nullptr;
-
 };
 
 

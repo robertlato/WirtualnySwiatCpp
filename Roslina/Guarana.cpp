@@ -24,8 +24,6 @@ void Guarana::kolizja(int nowyX, int nowyY, Organizm *przeciwnik)
     aktualnySwiat->setOrganizm(przeciwnik->getPolozenieX(), przeciwnik->getPolozenieY(), przeciwnik, nowyX, nowyY);
     przeciwnik->setPolozenieX(nowyX);
     przeciwnik->setPolozenieY(nowyY);
-
-    // Roslina::kolizja(nowyX, nowyY, przeciwnik);
 }
 
 Guarana::~Guarana() = default;

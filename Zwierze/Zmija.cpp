@@ -26,7 +26,6 @@ void Zmija::kolizja(int nowyX, int nowyY, Organizm* przeciwnik)
             << "][" << przeciwnik->getPolozenieY() <<"] umiera w wyniku zatrucia przez zmije ["
             << polozenie.x << "][" << polozenie.y << "]\n";
     }
-
 }
 
 

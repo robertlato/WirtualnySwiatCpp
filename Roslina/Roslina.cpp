@@ -11,14 +11,11 @@
 void Roslina::akcja()
 {
     srand(time(nullptr));
-
     int szansa = rand() % 100;
-
     if(getNazwa() == "Ciern") szansa = 100;
 
     if (szansa > 80)
     {
-
         bool gotowe = false;
         for (int i = -1; i < 2; i++)
         {
@@ -35,5 +32,4 @@ void Roslina::akcja()
             if (gotowe) break;
         }
     }
-
 }

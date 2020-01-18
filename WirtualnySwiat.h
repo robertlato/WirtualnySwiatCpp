@@ -5,7 +5,6 @@
 #ifndef WIRTUALNY_SWIAT_WIRTUALNYSWIAT_H
 #define WIRTUALNY_SWIAT_WIRTUALNYSWIAT_H
 
-//#include <vector>
 #include <list>
 
 #include "Organizm.h"
@@ -16,43 +15,33 @@ class WirtualnySwiat {
     Organizm*** organizmy;
     int iloscOrganizmow;
     std::list<Organizm*> kolejnoscOrganizmow;
-//    std::vector <Organizm*> kolejnoscOrganizmow;
-//    std::vector<Organizm*> noweOrganizmy;
     std::list<Organizm*> organizmyDoUsuniecia;
     int rozmiar; // rozmiar tablicy2D: rozmiar x rozmiar
+    int tura = 0;
 
 public:
-    int tura = 0;
 
     WirtualnySwiat(int rozmiar = 20, int iloscOrganizmow = 20);
 
     ~WirtualnySwiat();
 
     void wykonajTure();
-
     void rysujSwiat();
+    void usunOrganizm(int x, int y, Organizm* organizm);
+    void ustalKolejnosc();
+    bool zajetoscPola(int x, int y); // true jezeli pole zajete lub pole wybiega poza tablice swiata
+    bool czyWGranicy(int x, int y);
+    void createOrganizm(int x, int y, char znak);
 
-    Organizm* getOrganizm(int x, int y)
-    {
-        return organizmy[x][y];
-    }
+    // GETTERS
 
-    int getRozmiar()
-    {
-        return rozmiar;
-    }
+    Organizm* getOrganizm(int x, int y){return organizmy[x][y];}
+    int getRozmiar(){return rozmiar;}
+    int getTura(){return tura;}
+
+    // SETTERS
 
     void setOrganizm(int x, int y, Organizm* organizm, int nowyX, int nowyY);
-
-    void usunOrganizm(int x, int y, Organizm* organizm);
-
-    void ustalKolejnosc();
-
-    bool zajetoscPola(int x, int y); // true jezeli pole zajete lub pole wybiega poza tablice swiata
-
-    bool czyWGranicy(int x, int y);
-
-    void createOrganizm(int x, int y, char znak);
 
 };
 

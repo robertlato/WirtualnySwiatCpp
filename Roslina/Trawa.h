@@ -10,18 +10,11 @@
 #include "../WirtualnySwiat.h"
 
 class Trawa : public Roslina {
-    // char znak = 'T';
 public:
 
     Trawa(int x, int y, WirtualnySwiat *swiat);
-
     ~Trawa();
-
-    std::string getNazwa()
-    {
-        return ("Trawa");
-    }
-
+    std::string getNazwa(){return ("Trawa");}
 
 };
 

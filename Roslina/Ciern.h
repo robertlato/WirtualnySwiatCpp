@@ -13,12 +13,9 @@ class Ciern : public Roslina {
 public:
 
     Ciern(int x, int y, WirtualnySwiat *swiat);
-
     ~Ciern();
+    std::string getNazwa() {return ("Ciern");}
 
-    std::string getNazwa() {
-        return ("Ciern");
-    }
 };
 
 

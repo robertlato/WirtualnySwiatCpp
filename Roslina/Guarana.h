@@ -13,14 +13,10 @@ class Guarana : public Roslina {
 public:
 
     Guarana(int x, int y, WirtualnySwiat *swiat);
-
     ~Guarana();
-
     void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override;
+    std::string getNazwa() {return ("Guarana");}
 
-    std::string getNazwa() {
-        return ("Guarana");
-    }
 };
 
 

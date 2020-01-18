@@ -14,10 +14,4 @@ Lew::Lew(int x, int y, WirtualnySwiat *swiat) {
 
 }
 
-//void Lew::kolizja(int nowyX, int nowyY, Organizm *przeciwnik)
-//{
-//    if(przeciwnik->getSila() < 5) return;
-//    else Zwierze::kolizja(nowyX, nowyY, przeciwnik);
-//}
-
 Lew::~Lew() = default;

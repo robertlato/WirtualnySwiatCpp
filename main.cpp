@@ -5,22 +5,14 @@
 
     Opis: 
         Symulator wirtualnego swiata, LAB OTWARTE JPO
+        Zwierzeta: wilk, owca, lew, zmija, dzik
+        Rosliny: trawa, guarana, ciern
 */
 
 
 #include <iostream>
 
 #include "WirtualnySwiat.h"
-
-//#include "Roslina/Ciern.h"
-//#include "Roslina/Guarana.h"
-//#include "Roslina/Trawa.h"
-//
-//#include "Zwierze/Dzik.h"
-//#include "Zwierze/Lew.h"
-//#include "Zwierze/Owca.h"
-//#include "Zwierze/Wilk.h"
-//#include "Zwierze/Zmija.h"
 
 
 using namespace std;
@@ -47,7 +39,7 @@ int main()
         {
             case '1':
                 //system("clear"); // czyszczenie okna w clion nie dziala
-                cout << "Wykonuje ture numer: " << pierwszySwiat.tura + 1 << endl;
+                cout << "Wykonuje ture numer: " << pierwszySwiat.getTura() + 1 << endl;
                 pierwszySwiat.wykonajTure();
                 pierwszySwiat.rysujSwiat();
                 rysujMenu();
@@ -64,12 +56,6 @@ int main()
                 break;
         }
     }
-//    WirtualnySwiat pierwszySwiat;
-//    pierwszySwiat.rysujSwiat();
-//    pierwszySwiat.wykonajTure();
-//    pierwszySwiat.rysujSwiat();
-//    cout << "Koncze program\n";
-
 
     return 0;
 }

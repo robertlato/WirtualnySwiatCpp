@@ -13,15 +13,10 @@ class Zmija : public Zwierze {
 public:
 
     Zmija(int x, int y, WirtualnySwiat *swiat);
-
     ~Zmija();
-
-    std::string getNazwa()
-    {
-        return ("Zmija");
-    }
-
     void kolizja(int nowyX, int nowyY, Organizm* przeciwnik) override;
+    std::string getNazwa(){return ("Zmija");}
+
 };
 
 
